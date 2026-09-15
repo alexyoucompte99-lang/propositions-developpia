@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dr Guedj, dans les trois premiers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+<style>
+:root{
+  --fond:#FFFFFF; --surface:#F3F4F8; --surface-2:#E9EBF2; --ligne:#DCDFE8;
+  --encre:#14141A; --texte:#3A3B45; --sourd:#6B6D7A;
+  --accent:#3D6BFF; --accent-fonce:#2B4FCC; --accent-doux:#E8EEFF;
+  --violet:#7C5CF0; --ok:#1E8E5A; --ok-doux:#E4F5EC;
+  --carte-fond:#0E0F14; --carte-texte:#F2F3F7; --carte-sourd:#A9ACBA; --carte-ligne:rgba(255,255,255,.14);
+  --ombre:0 18px 48px rgba(20,20,26,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --fond:#0E0F14; --surface:#171922; --surface-2:#1F2230; --ligne:#2A2D3A;
+    --encre:#EEEFF4; --texte:#C7C9D3; --sourd:#8C8FA0;
+    --accent:#7B9BFF; --accent-fonce:#9DB4FF; --accent-doux:#1B2340;
+    --violet:#A28CFF; --ok:#4CC58A; --ok-doux:#123423;
+    --carte-fond:#171922; --carte-texte:#F2F3F7; --carte-sourd:#A9ACBA; --carte-ligne:rgba(255,255,255,.12);
+    --ombre:0 18px 48px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --fond:#0E0F14; --surface:#171922; --surface-2:#1F2230; --ligne:#2A2D3A;
+  --encre:#EEEFF4; --texte:#C7C9D3; --sourd:#8C8FA0;
+  --accent:#7B9BFF; --accent-fonce:#9DB4FF; --accent-doux:#1B2340;
+  --violet:#A28CFF; --ok:#4CC58A; --ok-doux:#123423;
+  --carte-fond:#171922; --carte-texte:#F2F3F7; --carte-sourd:#A9ACBA; --carte-ligne:rgba(255,255,255,.12);
+  --ombre:0 18px 48px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fond);color:var(--texte);font-family:"Geist",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;font-variant-numeric:tabular-nums}
+a{color:var(--accent-fonce);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+h1,h2,h3{color:var(--encre);margin:0;letter-spacing:-.02em;text-wrap:balance;line-height:1.15}
+h1{font-size:clamp(30px,5vw,44px);font-weight:600}
+h2{font-size:clamp(23px,3.4vw,30px);font-weight:600}
+h3{font-size:17px;font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+strong{color:var(--encre);font-weight:600}
+.page{max-width:880px;margin:0 auto;padding:28px 22px 80px}
+.lisible{max-width:66ch}
+.etiquette{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--violet)}
+
+/* En-tête */
+.entete{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--ligne);flex-wrap:wrap}
+.marque{display:flex;align-items:center;gap:9px;color:var(--encre);font-weight:600;font-size:15px;letter-spacing:-.01em}
+.marque i{width:26px;height:26px;border-radius:7px;background:linear-gradient(120deg,#4F7CFF,#8B5CF6 55%,#22D3EE);display:inline-block}
+.entete .meta{font-size:13px;color:var(--sourd);text-align:right}
+.titre{padding:36px 0 26px}
+.titre .sous{margin-top:12px;font-size:18px;color:var(--texte);max-width:60ch}
+
+/* La carte de décision */
+.decision{background:var(--carte-fond);color:var(--carte-texte);border-radius:18px;padding:30px 30px 26px;box-shadow:var(--ombre);position:relative;overflow:hidden}
+.decision::before{content:"";position:absolute;inset:-40% -20% auto auto;width:420px;height:420px;border-radius:50%;background:radial-gradient(closest-side,rgba(79,124,255,.38),rgba(79,124,255,0));pointer-events:none}
+.decision > *{position:relative}
+.decision .etiquette{color:#9DB4FF}
+.decision strong{color:#fff}
+.decision h2{color:#fff;font-size:clamp(22px,3vw,28px);margin-top:8px}
+.decision .intro{color:var(--carte-sourd);margin-top:8px;max-width:62ch}
+.trois{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px;padding-top:22px;border-top:1px solid var(--carte-ligne)}
+@media (max-width:720px){.trois{grid-template-columns:1fr}}
+.trois h3{color:#fff;font-size:15px;margin-bottom:10px}
+.trois ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.trois li{position:relative;padding-left:16px;font-size:14.5px;line-height:1.5;color:#D9DBE6}
+.trois li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:#4F7CFF}
+.trois .surs li::before{background:#22D3EE}
+.trois .apporte li::before{background:#8B5CF6}
+.bas-carte{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;margin-top:26px}
+@media (max-width:720px){.bas-carte{grid-template-columns:1fr}}
+.garantie-carte,.prix-carte{border-radius:14px;padding:20px 22px;border:1px solid var(--carte-ligne);background:rgba(255,255,255,.04)}
+.garantie-carte .etiquette{color:#5EE0B0}
+.garantie-carte p{margin-top:8px;font-size:15px;line-height:1.55;color:#E6E8F0}
+.prix-carte{background:linear-gradient(140deg,rgba(79,124,255,.22),rgba(139,92,246,.16))}
+.prix-carte .etiquette{color:#C9D6FF}
+.prix-carte .montant{margin-top:6px;font-size:40px;font-weight:600;letter-spacing:-.03em;color:#fff;line-height:1}
+.prix-carte .montant small{font-size:16px;font-weight:500;letter-spacing:0;color:#C9D6FF;margin-left:6px}
+.prix-carte .apres{margin-top:8px;color:#DDE3F8;font-size:14.5px}
+.prix-carte .puces{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.prix-carte .puces li{font-size:12.5px;padding:4px 10px;border-radius:99px;border:1px solid rgba(255,255,255,.22);color:#EEF1FF}
+.cta{margin-top:22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.cta .bouton{background:#fff;color:#0E0F14;font-weight:600;padding:12px 18px;border-radius:10px;text-decoration:none;font-size:15px}
+.cta .bouton:hover{background:#E8EEFF}
+.cta span{color:var(--carte-sourd);font-size:14px}
+
+/* Sections */
+section.bloc{padding:44px 0 8px;border-top:1px solid var(--ligne);margin-top:36px}
+section.bloc:first-of-type{border-top:0}
+section.bloc h2{margin-top:8px}
+section.bloc .chapeau{margin-top:12px;font-size:17px;max-width:64ch}
+.contenu{margin-top:22px;display:grid;gap:14px}
+.contenu p,.contenu li{max-width:66ch}
+ul.liste{margin:0;padding-left:0;list-style:none;display:grid;gap:10px}
+ul.liste li{position:relative;padding-left:22px}
+ul.liste li::before{content:"";position:absolute;left:2px;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+ul.coches li::before{width:14px;height:14px;top:.35em;left:0;border-radius:4px;background:var(--ok);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' d='M3 8.5l3.2 3L13 4.5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' d='M3 8.5l3.2 3L13 4.5'/%3E%3C/svg%3E") center/contain no-repeat}
+.citation{border-left:3px solid var(--accent);padding:6px 0 6px 18px;color:var(--encre);font-size:17px;line-height:1.5;max-width:60ch}
+.citation small{display:block;margin-top:6px;font-size:13px;color:var(--sourd)}
+
+/* Constats */
+.constats{display:grid;gap:10px;margin-top:22px}
+.constat{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start;padding:16px 18px;background:var(--surface);border-radius:12px}
+@media (max-width:560px){.constat{grid-template-columns:1fr;gap:6px}}
+.constat .chiffre{font-size:26px;font-weight:600;color:var(--encre);letter-spacing:-.03em;line-height:1.1}
+.constat .chiffre small{display:block;font-size:12px;font-weight:500;color:var(--sourd);letter-spacing:0;margin-top:3px}
+.constat p{font-size:15px}
+.constat.bon{background:var(--ok-doux)}
+.constat.bon .chiffre{color:var(--ok)}
+
+/* Tableau besoin / réponse */
+table{border-collapse:collapse;width:100%;font-size:15px}
+.defile{overflow-x:auto;margin-top:22px;border:1px solid var(--ligne);border-radius:12px}
+th,td{text-align:left;vertical-align:top;padding:13px 16px;border-bottom:1px solid var(--ligne)}
+th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sourd);background:var(--surface);font-weight:600}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--encre);font-weight:600;width:34%}
+
+/* Programme */
+.programme{display:grid;gap:0;margin-top:22px;border-left:2px solid var(--ligne);padding-left:0}
+.etape{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0 14px 22px;position:relative}
+@media (max-width:560px){.etape{grid-template-columns:1fr;gap:4px}}
+.etape::before{content:"";position:absolute;left:-7px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--fond)}
+.etape .quand{font-weight:600;color:var(--encre);font-size:15px}
+.etape .quoi{font-size:15px}
+.etape .quoi b{font-weight:600;color:var(--encre);display:block;margin-bottom:3px}
+.etape .vous{margin-top:6px;font-size:13.5px;color:var(--sourd)}
+
+/* ROI */
+.roi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+@media (max-width:720px){.roi{grid-template-columns:1fr}}
+.tuile{background:var(--surface);border-radius:12px;padding:18px}
+.tuile .val{font-size:30px;font-weight:600;color:var(--encre);letter-spacing:-.03em;line-height:1.05}
+.tuile .val small{font-size:14px;font-weight:500;color:var(--sourd);letter-spacing:0;margin-left:4px}
+.tuile .lib{margin-top:8px;font-size:14px}
+.tuile.forte{background:var(--accent-doux)}
+.tuile.forte .val{color:var(--accent-fonce)}
+.note{font-size:13.5px;color:var(--sourd);max-width:70ch}
+
+/* Sites */
+.sites{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}
+@media (max-width:640px){.sites{grid-template-columns:1fr}}
+.site{border:1px solid var(--ligne);border-radius:12px;overflow:hidden;background:var(--surface)}
+.site img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--ligne)}
+.site .lg{padding:12px 14px 14px;font-size:14px}
+.site .lg b{display:block;color:var(--encre);font-weight:600;margin-bottom:2px}
+.avant-apres{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+@media (max-width:640px){.avant-apres{grid-template-columns:1fr}}
+.avant-apres .site .lg b{font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+
+/* Garantie détaillée + prix détaillé */
+.encadre{border:1.5px solid var(--ok);background:var(--ok-doux);border-radius:14px;padding:22px 24px;margin-top:22px}
+.encadre h3{color:var(--ok)}
+.encadre p{margin-top:10px;font-size:15.5px;color:var(--encre)}
+.prix-detail{margin-top:22px;border:1px solid var(--ligne);border-radius:14px;overflow:hidden}
+.prix-detail .ligne{display:grid;grid-template-columns:1fr auto;gap:16px;padding:16px 20px;border-bottom:1px solid var(--ligne);align-items:baseline}
+.prix-detail .ligne:last-child{border-bottom:0}
+.prix-detail .ligne b{color:var(--encre);font-weight:600;display:block}
+.prix-detail .ligne span{font-size:14px;color:var(--sourd)}
+.prix-detail .ligne .m{font-size:22px;font-weight:600;color:var(--encre);letter-spacing:-.02em;white-space:nowrap}
+.prix-detail .total{background:var(--surface)}
+.jamais{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 22px;margin-top:22px;padding:0;list-style:none}
+@media (max-width:600px){.jamais{grid-template-columns:1fr}}
+.jamais li{position:relative;padding-left:22px;font-size:14.5px}
+.jamais li::before{content:"";position:absolute;left:0;top:.45em;width:13px;height:13px;border-radius:50%;background:var(--surface-2);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23000'/%3E%3Cpath d='M5 5l6 6M11 5l-6 6' stroke='%23fff' stroke-width='1.8'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23000'/%3E%3Cpath d='M5 5l6 6M11 5l-6 6' stroke='%23fff' stroke-width='1.8'/%3E%3C/svg%3E") center/contain no-repeat;background:var(--sourd)}
+
+/* Fin */
+.fin{margin-top:44px;background:var(--surface);border-radius:16px;padding:26px 28px}
+.fin ol{margin:14px 0 0;padding-left:22px;display:grid;gap:8px;font-size:15.5px}
+.fin ol li::marker{color:var(--accent);font-weight:600}
+.signature{margin-top:26px;font-size:14.5px;color:var(--sourd)}
+.signature b{display:block;color:var(--encre);font-weight:600}
+@media print{
+  body{background:#fff;color:#222}
+  .page{max-width:none;padding:0}
+  .decision{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section.bloc{break-inside:avoid-page}
+  .site,.tuile,.constat,.encadre{break-inside:avoid}
+  a{color:inherit}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+
+
+<div class="page">
+  <header class="entete">
+    <div class="marque"><i></i>DeveloppIA</div>
+    <div class="meta">Proposition pour le Dr Olivier Guedj<br>15 septembre 2026</div>
+  </header>
+
+  <div class="titre">
+    <p class="etiquette">Dr Olivier Guedj · 21 avenue du Bel Air, Paris 12 · Nation</p>
+    <h1>Docteur Guedj, voici le chantier pour placer votre cabinet dans les trois premiers.</h1>
+    <p class="sous">Ce dont on a parlé lundi matin, écrit noir sur blanc : ce dont vous avez besoin, ce que ça vous apporte, pourquoi on est sûrs d'y arriver, la garantie et le prix. Une page à lire, puis le détail. Vous gardez votre site et Mediweb : on travaille tout ce qui l'entoure, et ce qu'aucun prestataire n'a touché.</p>
+  </div>
+
+  <div class="decision">
+    <p class="etiquette">L'essentiel, en une page</p>
+    <h2>Top 3 sur « orthodontiste Paris » sur Google Maps et dans les IA, sans refaire votre site, sans y passer votre temps.</h2>
+    <p class="intro">Six mois, 53 actions écrites, chacune datée et prouvée. Un seul prix, rien de mensuel, une garantie de résultat écrite dans le contrat.</p>
+
+    <div class="trois">
+      <div>
+        <h3>Ce dont vous avez besoin</h3>
+        <ul>
+          <li>Du volume : plus de premiers rendez-vous qui entrent. Vous pouvez doubler l'activité sans recruter.</li>
+          <li>La position sur Google Maps, la vôtre, sur « orthodontiste Paris », et une place dans les réponses des IA.</li>
+          <li>Une vraie réponse à vos deux freins : pas de catégorie Orthodontiste possible, et un homonyme à deux kilomètres.</li>
+          <li>Ne pas repayer un site, ne pas y passer de temps, et voir enfin des résultats prouvés. Deux prestataires sont déjà passés sans preuve.</li>
+        </ul>
+      </div>
+      <div class="apporte">
+        <h3>Ce que ça vous apporte</h3>
+        <ul>
+          <li>Un rayon élargi sur la carte : top 3 aujourd'hui autour de Nation, demain dans le 11e, le 20e, à Vincennes, Saint-Mandé, Montreuil.</li>
+          <li>Des pages « Invisalign Paris » et « orthodontie adulte Paris » qui sortent pour un patient du 17e comme du 12e. Vos patients viennent de tout Paris : on écrit Paris, jamais Paris 12 dans les titres.</li>
+          <li>Être cité par ChatGPT, Gemini et Perplexity sur « combien coûte Invisalign à Paris » : elles citent ceux qui affichent leurs honoraires.</li>
+          <li>L'homonyme réglé à la source : nom, adresse, téléphone identiques partout, et le site qui dit aux moteurs « cette fiche, c'est moi ».</li>
+        </ul>
+      </div>
+      <div class="surs">
+        <h3>Pourquoi on est sûrs d'y arriver</h3>
+        <ul>
+          <li>292 avis à 4,9 : plus que n'importe quel cabinet d'orthodontie du 12e. Vous êtes 3e, pas 15e. La première place ne se gagne plus sur la fiche seule.</li>
+          <li>Ce qui manque est précis, et jamais fait : honoraires sur le site, prestations de la fiche, données structurées reliées, 15 à 20 annuaires alignés au caractère près, Bing, Apple, mesure mensuelle.</li>
+          <li>Votre site est déjà bon sur Invisalign (2 000 mots, 132 mentions). On l'enrichit via Mediweb, on ne le remplace pas.</li>
+          <li>On mesure tout avant, puis chaque mois : position depuis 49 points autour du cabinet, 120 essais sur les IA, appels depuis la fiche.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bas-carte">
+      <div class="garantie-carte">
+        <p class="etiquette">Notre garantie, écrite dans le contrat</p>
+        <p>Dans six mois, votre cabinet est <strong>dans les trois premiers sur Google Maps sur « orthodontiste Paris »</strong>, cherché depuis votre arrondissement. Sinon, vous choisissez : <strong>remboursement intégral, ou six mois de plus sans rien facturer</strong>, jusqu'à l'objectif. Vous gardez tout ce qui a été fait.</p>
+      </div>
+      <div class="prix-carte">
+        <p class="etiquette">Le prix, tout compris</p>
+        <p class="montant">1 188 €<small>TTC, pour six mois</small></p>
+        <p class="apres">990 € HT. Rien de mensuel, rien à ajouter.</p>
+        <ul class="puces"><li>594 € à la signature</li><li>594 € à la fin du 1er mois</li><li>Site Mediweb conservé</li></ul>
+      </div>
+    </div>
+
+    <div class="cta">
+      <span class="bouton">Répondez « OK » à ce message WhatsApp</span>
+      <span>Je vous envoie le contrat pré-rempli et le lien de règlement dans la foulée. Lancement avec Léo cette semaine.</span>
+    </div>
+  </div>
+
+  <section class="bloc">
+    <p class="etiquette">Ce que vous nous avez dit</p>
+    <h2>Vos mots, aux deux rendez-vous</h2>
+    <div class="contenu">
+      <p class="citation">« Ce qui compte, c'est la position sur Google Maps et le nombre de premiers rendez-vous qui entrent. La qualité du patient, c'est à moi de la convertir. »<small>Premier rendez-vous, 7 septembre</small></p>
+      <ul class="liste">
+        <li><strong>Le cabinet</strong> : installé depuis 25 ans avenue du Bel Air, orthodontie pratiquée au cabinet depuis 2001, chez l'enfant, l'adolescent et l'adulte. Une collaboratrice, le Dr Sekkat, qui travaille sous votre nom. Vous pouvez doubler l'activité.</li>
+        <li><strong>D'où viennent vos patients</strong> : les confrères qui vous adressent, le bouche-à-oreille, et internet de plus en plus (Google, Doctolib, ChatGPT). Vous ne savez pas combien viennent de Maps. Deux ou trois patients cette année via les IA.</li>
+        <li><strong>Déjà essayé</strong> : deux prestataires sur la fiche Google, du contenu de blog sur le site. Pas de résultat visible, pas envie d'y repasser du temps. Site géré par Mediweb, avec qui la relation est très bonne.</li>
+        <li><strong>Vos deux freins</strong> : pas de catégorie Orthodontiste possible, et un homonyme dentiste à deux kilomètres, visible sous votre propre fiche dans « Recherches associées ».</li>
+        <li><strong>Lundi matin</strong> : vous ne voulez pas repayer un site, le vôtre ressemble à ce qu'on fait. Vous voulez le référencement seul, avec l'objectif top 3 sur « orthodontiste Paris », sur la carte et dans les IA. Vous avez déjà beaucoup fait sur la fiche et la cohérence : on repart de là, sans refaire ce qui est bon.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Ce qu'on a vu, mesuré les 13 et 14 septembre</p>
+    <h2>Une fiche déjà forte, et tout ce qui l'entoure qui n'a pas été touché</h2>
+    <div class="constats">
+      <div class="constat bon"><div class="chiffre">4,9<small>sur 292 avis</small></div><p>Plus d'avis que n'importe quel cabinet d'orthodontie du 12e, des posts réguliers, une réponse personnalisée à chaque avis. C'est votre force, et c'est pour ça que vous êtes 3e et pas 15e.</p></div>
+      <div class="constat"><div class="chiffre">3e<small>sur « orthodontiste Paris 12 »</small></div><p>Derrière deux cabinets catégorisés Orthodontiste, à 193 et 75 avis. Ils gagnent sur ce qui entoure la fiche : site relié, annuaires alignés, avis qui parlent d'orthodontie.</p></div>
+      <div class="constat"><div class="chiffre">0<small>honoraire sur le site</small></div><p>Votre site est très bon sur Invisalign, mais vos honoraires n'y sont pas. Quand on demande à ChatGPT le prix d'Invisalign à Paris, il cite ceux qui les affichent. C'est aussi une obligation depuis le décret de décembre 2020.</p></div>
+      <div class="constat"><div class="chiffre">63<small>sur 100 dans les IA</small></div><p>Score global 59, Google 55. Rubrique Prestations de la fiche vide, pas de présentation, mots ajoutés au nom de la fiche (motif de suspension chez Google, à nettoyer un changement à la fois), homonyme affiché sous votre fiche.</p></div>
+    </div>
+    <p class="note" style="margin-top:14px">Test de référencement DeveloppIA, fiche Google, site actuel et recherches Google en navigation privée depuis Paris 12, les 13 et 14/09/2026.</p>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Comment on y répond</p>
+    <h2>Besoin par besoin, ce qu'on met en place</h2>
+    <div class="defile"><table>
+      <thead><tr><th>Vous voulez</th><th>Ce qu'on fait</th></tr></thead>
+      <tbody>
+        <tr><td>Monter sur Google Maps</td><td>La fiche au millimètre, un changement sensible par jour : prestations acte par acte dans les mots des patients, présentation de 750 caractères, questions-réponses de la fiche, attributs, liens tracés, horaires alignés avec Doctolib, une actualité par mois, contrôle des modifications proposées par Google.</td></tr>
+        <tr><td>Réponse à la catégorie Orthodontiste</td><td>On ne la demandera jamais : ce serait une usurpation de titre et un motif de suspension. On compense par la pertinence : prestations, description, questions-réponses, pages du site et mots des avis. Google apparie les recherches sur ces textes, pas seulement sur la catégorie.</td></tr>
+        <tr><td>Réponse à l'homonyme</td><td>Une fiche de référence unique, 15 à 20 présences comparées champ par champ (Ordre, Ameli, Doctolib, PagesJaunes, Bing, Apple, Waze, 118 712, réseaux), un dossier homonyme avec chaque endroit où les deux se mélangent et la correction à la source, données structurées sur le site reliées à votre fiche et à votre Doctolib, bloc « le bon cabinet » sur l'accueil.</td></tr>
+        <tr><td>Ne pas refaire le site</td><td>Site Mediweb conservé et enrichi, avec nos textes et notre code prêts à intégrer : page honoraires, quatre pages « Paris » (orthodontie adulte, Invisalign, orthodontie enfant et adolescent, contention), données structurées, titres, vitesse, robots des IA autorisés, mise en conformité, deux articles de conseil par mois.</td></tr>
+        <tr><td>Être cité par les IA</td><td>Honoraires publiés, questions-réponses balisées (prix, durée, adulte, ado), Bing Places revendiqué (il alimente ChatGPT et Copilot), Doctolib réécrit, correction à la source de chaque erreur des IA, 120 essais mesurés chaque mois.</td></tr>
+        <tr><td>Des avis qui comptent</td><td>Demande d'avis après chaque rendez-vous, à tous les patients, sans tri ni contrepartie, avec le soin cité pour que les patients écrivent « Invisalign » et « orthodontie ». Réponse à chaque avis sous 48 h, rédigée par nous, validée et publiée par vous.</td></tr>
+        <tr><td>Des preuves, pas des promesses</td><td>État zéro archivé la semaine 1 (audit 190 points, géogrille 49 points, 120 essais IA, statistiques de la fiche sur 12 mois, captures datées). Rapport d'une page chaque mois avec la carte de la géogrille. Question « comment nous avez-vous connus ? » à l'accueil : dans trois mois vous saurez combien viennent de Maps.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note" style="margin-top:14px">Le détail des 53 actions, avec pour chacune le critère Google qu'elle pousse (pertinence, distance, proéminence), est dans le document « Chantier Guedj » joint.</p>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Le programme en dates</p>
+    <h2>Douze semaines de mise en place, puis la routine jusqu'au sixième mois</h2>
+    <div class="programme">
+      <div class="etape"><div class="quand">Semaine 1</div><div class="quoi"><b>Accès et état zéro</b>Audit 190 points, géogrille 7 × 7 autour du cabinet, 120 essais IA, Search Console et Bing branchés, statistiques de la fiche archivées, relevé des trois cabinets du pack Maps.<div class="vous">Vous : invitations à la fiche et à Search Console, contact Mediweb, votre grille d'honoraires en photo. L'appel de lancement de 40 minutes avec Léo.</div></div></div>
+      <div class="etape"><div class="quand">Semaine 2</div><div class="quoi"><b>Rapport d'audit et fiche de référence</b>Présenté à l'écran : ce qui est bon, ce qui bloque, ce qu'on fait en premier. Début des corrections urgentes.<div class="vous">Vous : 30 minutes à l'écran, choix sur les avant/après et le système d'avis. Le second règlement de 594 € part à la fin de ce mois.</div></div></div>
+      <div class="etape"><div class="quand">Semaines 2 à 4</div><div class="quoi"><b>La fiche Google au millimètre</b>Un changement sensible par jour, page honoraires livrée à Mediweb, système d'avis lancé, Bing Places et Apple Business Connect créés.<div class="vous">Vous : validation des textes de la fiche, séance photo si vous le souhaitez.</div></div></div>
+      <div class="etape"><div class="quand">Semaines 3 à 6</div><div class="quoi"><b>Cohérence et homonyme</b>Inventaire des 15 à 20 présences, dossier homonyme, Doctolib réécrit, fondations techniques du site.<div class="vous">Vous : signature des courriers à l'Ordre et à la caisse, préparés par nous.</div></div></div>
+      <div class="etape"><div class="quand">Semaines 5 à 10</div><div class="quoi"><b>Les quatre pages « Paris »</b>Orthodontie adulte, Invisalign, orthodontie enfant et adolescent, contention. 1 000 à 1 500 mots chacune, questions-réponses, données structurées, galerie avant/après avec accords écrits.<div class="vous">Vous : relecture et validation écrite de chaque page, une dizaine de minutes par page.</div></div></div>
+      <div class="etape"><div class="quand">Semaines 8 à 12</div><div class="quoi"><b>Les IA et la notoriété</b>Premiers articles, corrections des erreurs des IA à la source, mentions non payées (confrères, associations, pages de quartier), première géogrille comparée.</div></div>
+      <div class="etape"><div class="quand">Mois 4 à 6</div><div class="quoi"><b>La routine et la preuve</b>Chaque mois : statistiques de la fiche, Search Console, géogrille refaite, 40 essais IA, avis, actualité, contenus, contrôle de trois annuaires, rapport d'une page. Alertes immédiates si la fiche bouge, si un avis à une étoile tombe, si une IA dit faux.<div class="vous">Vous : 30 minutes par mois.</div></div></div>
+      <div class="etape"><div class="quand">Fin du 6e mois</div><div class="quoi"><b>Le point de garantie</b>Recherche « orthodontiste Paris » sur Google Maps depuis votre arrondissement, en navigation privée, datée, à l'écran avec vous. Dans les trois premiers, ou remboursé, ou six mois offerts.</div></div>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Le retour sur investissement</p>
+    <h2>Ce que ça coûte, ce que ça rapporte</h2>
+    <p class="chapeau">Une estimation, pas une promesse, à partir de chiffres publics : un plan de traitement accepté vaut en moyenne 3 350 € en orthodontie (baromètre Masterdoc 2025), et il reste 35 à 38 % au praticien une fois tout payé (UNASA, Fiducial). Vous corrigerez avec vos propres chiffres.</p>
+    <div class="roi">
+      <div class="tuile"><div class="val">198 €<small>par mois</small></div><div class="lib">Le chantier, ramené au mois sur six mois. Rien ensuite.</div></div>
+      <div class="tuile"><div class="val">1<small>traitement</small></div><div class="lib">Un seul plan d'orthodontie accepté, en chiffre d'affaires, rembourse presque trois fois le chantier. En net, un traitement suffit.</div></div>
+      <div class="tuile forte"><div class="val">18 à 24 %</div><div class="lib">La part des clics que prend le premier résultat de Google Maps. Le 2e et le 3e, environ 15 % chacun. Au-delà, la chute est brutale.</div></div>
+    </div>
+    <div class="defile"><table>
+      <thead><tr><th>Scénario sur un an</th><th>Nouveaux traitements</th><th>Chiffre d'affaires</th><th>Net, tout payé</th><th>Pour 1 188 €</th></tr></thead>
+      <tbody>
+        <tr><td>Prudent : 1 traitement d'orthodontie de plus par mois</td><td>12</td><td>40 200 €</td><td>≈ 14 000 €</td><td>× 12</td></tr>
+        <tr><td>Réaliste : 2 traitements de plus par mois</td><td>24</td><td>80 400 €</td><td>≈ 28 000 €</td><td>× 24</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note" style="margin-top:12px">Vous pouvez doubler l'activité sans recruter : ces volumes sont bien en dessous de ce que le cabinet peut absorber. Le calcul complet, mois par mois et avec ses sources, est sur <a href="https://developpia.fr/simulateur-de-rentabilite/">developpia.fr/simulateur-de-rentabilite</a>.</p>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Ce qu'on sait faire</p>
+    <h2>Des sites que nous avons conçus</h2>
+    <p class="chapeau">Vous gardez votre site : ces cabinets de démonstration montrent le niveau des pages qu'on livre à Mediweb pour le vôtre. Une page par soin, les honoraires, les données structurées, la prise de rendez-vous.</p>
+    <div class="sites">
+      <a class="site" href="https://demo-cabinet-monceau-tau.vercel.app" target="_blank" rel="noopener"><img src="../img/monceau.jpg" alt="Site de démonstration Cabinet Monceau, Paris 8e"><div class="lg"><b>Cabinet Monceau, Paris 8e</b>Clair, hôtel particulier, ton sobre.</div></a>
+      <a class="site" href="https://demo-cabinet-croix-rousse.vercel.app" target="_blank" rel="noopener"><img src="../img/croix-rousse.jpg" alt="Site de démonstration Cabinet Croix-Rousse, Lyon"><div class="lg"><b>Cabinet Croix-Rousse, Lyon</b>Classique et complet, une page par soin.</div></a>
+      <a class="site" href="https://demo-clinique-aster.vercel.app" target="_blank" rel="noopener"><img src="../img/aster.jpg" alt="Site de démonstration Clinique Aster, Luxembourg"><div class="lg"><b>Clinique Aster, Luxembourg</b>Sombre, quatre langues, esthétique et implantologie.</div></a>
+      <a class="site" href="https://demo-cabinet-grande-cote.vercel.app" target="_blank" rel="noopener"><img src="../img/grande-cote.jpg" alt="Site de démonstration Cabinet Grande-Côte, Lyon 1er"><div class="lg"><b>Cabinet Grande-Côte, Lyon 1er</b>Éditorial, raconté comme une journée au cabinet.</div></a>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Ce que ça vous demande</p>
+    <h2>Deux à trois heures le premier mois, puis 30 minutes par mois</h2>
+    <div class="contenu">
+      <ul class="liste coches">
+        <li>L'appel de lancement de 40 minutes avec Léo, cette semaine.</li>
+        <li>Les invitations à votre fiche Google et à Search Console, le contact chez Mediweb pour intégrer nos pages (on s'occupe de l'échange).</li>
+        <li>Votre grille d'honoraires en photo, par votre assistante.</li>
+        <li>30 minutes à l'écran en semaine 2 pour le rapport d'audit, puis un « validé » écrit sur chaque texte avant publication. Rien ne sort sans votre accord : c'est vous qui répondez de votre communication devant l'Ordre.</li>
+        <li>Deux signatures sur les courriers à l'Ordre et à la caisse, préparés par nous.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">La garantie, en détail</p>
+    <h2>Top 3 dans six mois, ou vous ne payez pas</h2>
+    <div class="encadre">
+      <h3>Dans les trois premiers à six mois, sinon remboursé ou six mois offerts</h3>
+      <p>À la fin du sixième mois, on refait le relevé de l'état zéro, à l'écran avec vous : une recherche « orthodontiste Paris » sur Google Maps depuis votre arrondissement, en navigation privée, datée. Si votre cabinet n'est pas dans les trois premiers, vous choisissez : le remboursement intégral des 1 188 € sous trente jours, ou six mois de plus sans rien facturer, jusqu'à l'objectif.</p>
+      <p>Le taux de présence dans les IA est relevé au même moment sur les 120 essais et comparé à l'état zéro. Vous gardez la fiche, les textes, les pages et les courriers. Une seule condition de notre côté : les accès et les validations demandés dans le calendrier sont donnés dans les délais. C'est écrit à l'article 11 du contrat joint.</p>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Le prix, en détail</p>
+    <h2>1 188 € TTC pour six mois, rien de mensuel</h2>
+    <div class="prix-detail">
+      <div class="ligne"><div><b>L'audit et l'état zéro</b><span>190 points de contrôle, géogrille 49 points, 120 essais IA, Search Console et Bing, statistiques 12 mois, relevé des concurrents, captures datées, rapport présenté.</span></div><div class="m">inclus</div></div>
+      <div class="ligne"><div><b>La fiche Google et les avis</b><span>13 réglages de la fiche, un changement par jour, système d'avis conforme, réponse à chaque avis sous 48 h, une actualité par mois.</span></div><div class="m">inclus</div></div>
+      <div class="ligne"><div><b>Le site enrichi via Mediweb</b><span>Page honoraires, quatre pages « Paris », données structurées, titres, vitesse, robots des IA, mise en conformité, deux articles par mois, galerie avant/après avec accords.</span></div><div class="m">inclus</div></div>
+      <div class="ligne"><div><b>Cohérence, homonyme et IA</b><span>15 à 20 présences alignées, dossier homonyme, Bing et Apple, Doctolib réécrit, courriers Ordre et caisse, corrections des IA, mesure du trafic venu des IA.</span></div><div class="m">inclus</div></div>
+      <div class="ligne"><div><b>Le suivi</b><span>Rapport mensuel d'une page avec la carte, alertes immédiates, audit trimestriel, point de 30 minutes, exclusivité sur votre secteur.</span></div><div class="m">inclus</div></div>
+      <div class="ligne total"><div><b>Six mois, tout compris</b><span>990 € HT, 198 € de TVA. 594 € à la signature, 594 € à la fin du premier mois.</span></div><div class="m">1 188 €</div></div>
+    </div>
+    <p class="note" style="margin-top:14px">Pour situer : une agence dentaire facture 2 800 à 8 000 € de mise en place puis 800 à 1 500 € par mois. Ici, un chantier de six mois, une fois, avec une obligation de résultat écrite.</p>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Le cadre</p>
+    <h2>Ce qu'on ne fera jamais</h2>
+    <p class="chapeau">Tout est fait dans le cadre du code de déontologie des chirurgiens-dentistes. Ça protège votre fiche, votre titre et votre inscription à l'Ordre.</p>
+    <ul class="jamais">
+      <li>Demander la catégorie Orthodontiste ou écrire « spécialiste »</li>
+      <li>Une place payée, un lien ou un article acheté</li>
+      <li>Un faux avis, un avis contre contrepartie, un tri des patients contents</li>
+      <li>Un témoignage de patient ou un avis recopié sur le site</li>
+      <li>Une comparaison avec un confrère, « meilleur », « n°1 »</li>
+      <li>Une réponse à un avis qui révèle qu'une personne est patiente</li>
+      <li>Modifier nom, adresse et catégorie le même jour</li>
+      <li>Critiquer Mediweb ou vos anciens prestataires : on construit sur ce qui est bon</li>
+    </ul>
+  </section>
+
+  <div class="fin">
+    <p class="etiquette">Pour démarrer</p>
+    <h2>Trois gestes, et on lance cette semaine</h2>
+    <ol>
+      <li>Vous répondez « OK » à ce message WhatsApp.</li>
+      <li>Vous recevez le contrat pré-rempli et le lien de règlement des 594 €.</li>
+      <li>On date l'appel de lancement avec Léo, et sept jours après vos accès l'état zéro est archivé et votre fiche commence à bouger, capture avant et après à l'appui.</li>
+    </ol>
+    <p style="margin-top:16px;font-size:15px">Une question avant ? Écrivez-la au même endroit, je réponds dans la journée.</p>
+  </div>
+
+  <div class="signature"><b>Alexandre Majorel</b>DeveloppIA, référencement de cabinets dentaires<br>developpia.fr · contact@developpia.fr</div>
+</div>
+</body>
+</html>

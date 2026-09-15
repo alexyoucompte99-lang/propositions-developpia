@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dr Fellous, votre cabinet en premier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+<style>
+:root{
+  --fond:#FFFFFF; --surface:#F3F4F8; --surface-2:#E9EBF2; --ligne:#DCDFE8;
+  --encre:#14141A; --texte:#3A3B45; --sourd:#6B6D7A;
+  --accent:#3D6BFF; --accent-fonce:#2B4FCC; --accent-doux:#E8EEFF;
+  --violet:#7C5CF0; --ok:#1E8E5A; --ok-doux:#E4F5EC;
+  --carte-fond:#0E0F14; --carte-texte:#F2F3F7; --carte-sourd:#A9ACBA; --carte-ligne:rgba(255,255,255,.14);
+  --ombre:0 18px 48px rgba(20,20,26,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --fond:#0E0F14; --surface:#171922; --surface-2:#1F2230; --ligne:#2A2D3A;
+    --encre:#EEEFF4; --texte:#C7C9D3; --sourd:#8C8FA0;
+    --accent:#7B9BFF; --accent-fonce:#9DB4FF; --accent-doux:#1B2340;
+    --violet:#A28CFF; --ok:#4CC58A; --ok-doux:#123423;
+    --carte-fond:#171922; --carte-texte:#F2F3F7; --carte-sourd:#A9ACBA; --carte-ligne:rgba(255,255,255,.12);
+    --ombre:0 18px 48px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --fond:#0E0F14; --surface:#171922; --surface-2:#1F2230; --ligne:#2A2D3A;
+  --encre:#EEEFF4; --texte:#C7C9D3; --sourd:#8C8FA0;
+  --accent:#7B9BFF; --accent-fonce:#9DB4FF; --accent-doux:#1B2340;
+  --violet:#A28CFF; --ok:#4CC58A; --ok-doux:#123423;
+  --carte-fond:#171922; --carte-texte:#F2F3F7; --carte-sourd:#A9ACBA; --carte-ligne:rgba(255,255,255,.12);
+  --ombre:0 18px 48px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fond);color:var(--texte);font-family:"Geist",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;font-variant-numeric:tabular-nums}
+a{color:var(--accent-fonce);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+h1,h2,h3{color:var(--encre);margin:0;letter-spacing:-.02em;text-wrap:balance;line-height:1.15}
+h1{font-size:clamp(30px,5vw,44px);font-weight:600}
+h2{font-size:clamp(23px,3.4vw,30px);font-weight:600}
+h3{font-size:17px;font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+strong{color:var(--encre);font-weight:600}
+.page{max-width:880px;margin:0 auto;padding:28px 22px 80px}
+.lisible{max-width:66ch}
+.etiquette{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--violet)}
+
+/* En-tête */
+.entete{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--ligne);flex-wrap:wrap}
+.marque{display:flex;align-items:center;gap:9px;color:var(--encre);font-weight:600;font-size:15px;letter-spacing:-.01em}
+.marque i{width:26px;height:26px;border-radius:7px;background:linear-gradient(120deg,#4F7CFF,#8B5CF6 55%,#22D3EE);display:inline-block}
+.entete .meta{font-size:13px;color:var(--sourd);text-align:right}
+.titre{padding:36px 0 26px}
+.titre .sous{margin-top:12px;font-size:18px;color:var(--texte);max-width:60ch}
+
+/* La carte de décision */
+.decision{background:var(--carte-fond);color:var(--carte-texte);border-radius:18px;padding:30px 30px 26px;box-shadow:var(--ombre);position:relative;overflow:hidden}
+.decision::before{content:"";position:absolute;inset:-40% -20% auto auto;width:420px;height:420px;border-radius:50%;background:radial-gradient(closest-side,rgba(79,124,255,.38),rgba(79,124,255,0));pointer-events:none}
+.decision > *{position:relative}
+.decision .etiquette{color:#9DB4FF}
+.decision strong{color:#fff}
+.decision h2{color:#fff;font-size:clamp(22px,3vw,28px);margin-top:8px}
+.decision .intro{color:var(--carte-sourd);margin-top:8px;max-width:62ch}
+.trois{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px;padding-top:22px;border-top:1px solid var(--carte-ligne)}
+@media (max-width:720px){.trois{grid-template-columns:1fr}}
+.trois h3{color:#fff;font-size:15px;margin-bottom:10px}
+.trois ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.trois li{position:relative;padding-left:16px;font-size:14.5px;line-height:1.5;color:#D9DBE6}
+.trois li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:#4F7CFF}
+.trois .surs li::before{background:#22D3EE}
+.trois .apporte li::before{background:#8B5CF6}
+.bas-carte{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;margin-top:26px}
+@media (max-width:720px){.bas-carte{grid-template-columns:1fr}}
+.garantie-carte,.prix-carte{border-radius:14px;padding:20px 22px;border:1px solid var(--carte-ligne);background:rgba(255,255,255,.04)}
+.garantie-carte .etiquette{color:#5EE0B0}
+.garantie-carte p{margin-top:8px;font-size:15px;line-height:1.55;color:#E6E8F0}
+.prix-carte{background:linear-gradient(140deg,rgba(79,124,255,.22),rgba(139,92,246,.16))}
+.prix-carte .etiquette{color:#C9D6FF}
+.prix-carte .montant{margin-top:6px;font-size:40px;font-weight:600;letter-spacing:-.03em;color:#fff;line-height:1}
+.prix-carte .montant small{font-size:16px;font-weight:500;letter-spacing:0;color:#C9D6FF;margin-left:6px}
+.prix-carte .apres{margin-top:8px;color:#DDE3F8;font-size:14.5px}
+.prix-carte .puces{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.prix-carte .puces li{font-size:12.5px;padding:4px 10px;border-radius:99px;border:1px solid rgba(255,255,255,.22);color:#EEF1FF}
+.cta{margin-top:22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.cta .bouton{background:#fff;color:#0E0F14;font-weight:600;padding:12px 18px;border-radius:10px;text-decoration:none;font-size:15px}
+.cta .bouton:hover{background:#E8EEFF}
+.cta span{color:var(--carte-sourd);font-size:14px}
+
+/* Sections */
+section.bloc{padding:44px 0 8px;border-top:1px solid var(--ligne);margin-top:36px}
+section.bloc:first-of-type{border-top:0}
+section.bloc h2{margin-top:8px}
+section.bloc .chapeau{margin-top:12px;font-size:17px;max-width:64ch}
+.contenu{margin-top:22px;display:grid;gap:14px}
+.contenu p,.contenu li{max-width:66ch}
+ul.liste{margin:0;padding-left:0;list-style:none;display:grid;gap:10px}
+ul.liste li{position:relative;padding-left:22px}
+ul.liste li::before{content:"";position:absolute;left:2px;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+ul.coches li::before{width:14px;height:14px;top:.35em;left:0;border-radius:4px;background:var(--ok);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' d='M3 8.5l3.2 3L13 4.5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' d='M3 8.5l3.2 3L13 4.5'/%3E%3C/svg%3E") center/contain no-repeat}
+.citation{border-left:3px solid var(--accent);padding:6px 0 6px 18px;color:var(--encre);font-size:17px;line-height:1.5;max-width:60ch}
+.citation small{display:block;margin-top:6px;font-size:13px;color:var(--sourd)}
+
+/* Constats */
+.constats{display:grid;gap:10px;margin-top:22px}
+.constat{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start;padding:16px 18px;background:var(--surface);border-radius:12px}
+@media (max-width:560px){.constat{grid-template-columns:1fr;gap:6px}}
+.constat .chiffre{font-size:26px;font-weight:600;color:var(--encre);letter-spacing:-.03em;line-height:1.1}
+.constat .chiffre small{display:block;font-size:12px;font-weight:500;color:var(--sourd);letter-spacing:0;margin-top:3px}
+.constat p{font-size:15px}
+.constat.bon{background:var(--ok-doux)}
+.constat.bon .chiffre{color:var(--ok)}
+
+/* Tableau besoin / réponse */
+table{border-collapse:collapse;width:100%;font-size:15px}
+.defile{overflow-x:auto;margin-top:22px;border:1px solid var(--ligne);border-radius:12px}
+th,td{text-align:left;vertical-align:top;padding:13px 16px;border-bottom:1px solid var(--ligne)}
+th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sourd);background:var(--surface);font-weight:600}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--encre);font-weight:600;width:34%}
+
+/* Programme */
+.programme{display:grid;gap:0;margin-top:22px;border-left:2px solid var(--ligne);padding-left:0}
+.etape{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0 14px 22px;position:relative}
+@media (max-width:560px){.etape{grid-template-columns:1fr;gap:4px}}
+.etape::before{content:"";position:absolute;left:-7px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--fond)}
+.etape .quand{font-weight:600;color:var(--encre);font-size:15px}
+.etape .quoi{font-size:15px}
+.etape .quoi b{font-weight:600;color:var(--encre);display:block;margin-bottom:3px}
+.etape .vous{margin-top:6px;font-size:13.5px;color:var(--sourd)}
+
+/* ROI */
+.roi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+@media (max-width:720px){.roi{grid-template-columns:1fr}}
+.tuile{background:var(--surface);border-radius:12px;padding:18px}
+.tuile .val{font-size:30px;font-weight:600;color:var(--encre);letter-spacing:-.03em;line-height:1.05}
+.tuile .val small{font-size:14px;font-weight:500;color:var(--sourd);letter-spacing:0;margin-left:4px}
+.tuile .lib{margin-top:8px;font-size:14px}
+.tuile.forte{background:var(--accent-doux)}
+.tuile.forte .val{color:var(--accent-fonce)}
+.note{font-size:13.5px;color:var(--sourd);max-width:70ch}
+
+/* Sites */
+.sites{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}
+@media (max-width:640px){.sites{grid-template-columns:1fr}}
+.site{border:1px solid var(--ligne);border-radius:12px;overflow:hidden;background:var(--surface)}
+.site img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--ligne)}
+.site .lg{padding:12px 14px 14px;font-size:14px}
+.site .lg b{display:block;color:var(--encre);font-weight:600;margin-bottom:2px}
+.avant-apres{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+@media (max-width:640px){.avant-apres{grid-template-columns:1fr}}
+.avant-apres .site .lg b{font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+
+/* Garantie détaillée + prix détaillé */
+.encadre{border:1.5px solid var(--ok);background:var(--ok-doux);border-radius:14px;padding:22px 24px;margin-top:22px}
+.encadre h3{color:var(--ok)}
+.encadre p{margin-top:10px;font-size:15.5px;color:var(--encre)}
+.prix-detail{margin-top:22px;border:1px solid var(--ligne);border-radius:14px;overflow:hidden}
+.prix-detail .ligne{display:grid;grid-template-columns:1fr auto;gap:16px;padding:16px 20px;border-bottom:1px solid var(--ligne);align-items:baseline}
+.prix-detail .ligne:last-child{border-bottom:0}
+.prix-detail .ligne b{color:var(--encre);font-weight:600;display:block}
+.prix-detail .ligne span{font-size:14px;color:var(--sourd)}
+.prix-detail .ligne .m{font-size:22px;font-weight:600;color:var(--encre);letter-spacing:-.02em;white-space:nowrap}
+.prix-detail .total{background:var(--surface)}
+.jamais{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 22px;margin-top:22px;padding:0;list-style:none}
+@media (max-width:600px){.jamais{grid-template-columns:1fr}}
+.jamais li{position:relative;padding-left:22px;font-size:14.5px}
+.jamais li::before{content:"";position:absolute;left:0;top:.45em;width:13px;height:13px;border-radius:50%;background:var(--surface-2);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23000'/%3E%3Cpath d='M5 5l6 6M11 5l-6 6' stroke='%23fff' stroke-width='1.8'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23000'/%3E%3Cpath d='M5 5l6 6M11 5l-6 6' stroke='%23fff' stroke-width='1.8'/%3E%3C/svg%3E") center/contain no-repeat;background:var(--sourd)}
+
+/* Fin */
+.fin{margin-top:44px;background:var(--surface);border-radius:16px;padding:26px 28px}
+.fin ol{margin:14px 0 0;padding-left:22px;display:grid;gap:8px;font-size:15.5px}
+.fin ol li::marker{color:var(--accent);font-weight:600}
+.signature{margin-top:26px;font-size:14.5px;color:var(--sourd)}
+.signature b{display:block;color:var(--encre);font-weight:600}
+@media print{
+  body{background:#fff;color:#222}
+  .page{max-width:none;padding:0}
+  .decision{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section.bloc{break-inside:avoid-page}
+  .site,.tuile,.constat,.encadre{break-inside:avoid}
+  a{color:inherit}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+
+
+<div class="page">
+  <header class="entete">
+    <div class="marque"><i></i>DeveloppIA</div>
+    <div class="meta">Proposition pour le Dr Rémy Fellous<br>15 septembre 2026</div>
+  </header>
+
+  <div class="titre">
+    <p class="etiquette">Cabinet Dentaire de Champs-sur-Marne · Cap Horn Santé</p>
+    <h1>Docteur Fellous, voici ce qu'on met en place pour que votre cabinet soit celui qu'on trouve.</h1>
+    <p class="sous">Tout ce dont on a parlé lundi soir, écrit noir sur blanc : ce dont vous avez besoin, ce que ça vous apporte, pourquoi on est sûrs d'y arriver, la garantie et le prix. La page tient en une lecture ; le détail suit pour ceux qui veulent tout vérifier.</p>
+  </div>
+
+  <div class="decision">
+    <p class="etiquette">L'essentiel, en une page</p>
+    <h2>Un site à la hauteur du cabinet, la première place sur Google Maps, et une place dans les réponses des IA.</h2>
+    <p class="intro">Six mois de travail, un seul prix, une garantie écrite. Vous ne touchez à rien : un appel de lancement avec Léo, votre grille d'honoraires en photo, et vous validez les textes.</p>
+
+    <div class="trois">
+      <div>
+        <h3>Ce dont vous avez besoin</h3>
+        <ul>
+          <li>Repartir d'une feuille blanche : un site qui montre enfin le cabinet neuf, les cinq praticiens, le plateau 2D/3D.</li>
+          <li>Être trouvé sur ce qui compte : implant dentaire, orthodontie esthétique adulte, urgences.</li>
+          <li>Être cité par ChatGPT, Gemini et Perplexity quand un patient leur demande un dentiste à Champs-sur-Marne.</li>
+          <li>Des avis Google qui travaillent pour vous, et un nom de domaine à vous, sans casse pendant la transition.</li>
+        </ul>
+      </div>
+      <div class="apporte">
+        <h3>Ce que ça vous apporte</h3>
+        <ul>
+          <li>La première place sur « dentiste Champs-sur-Marne », devant le Centre Dentaire qui vous précède aujourd'hui au volume d'avis.</li>
+          <li>Des patients qui arrivent déjà informés sur l'implant, les aligneurs et le premier rendez-vous : moins d'explications, plus de plans acceptés.</li>
+          <li>Un cabinet lisible par les IA : pages par soin, questions-réponses, honoraires. C'est ce qu'elles recopient.</li>
+          <li>Un site qui vous appartient, hébergé et maintenu, et la fin des 600 € par an pour 190 mots.</li>
+        </ul>
+      </div>
+      <div class="surs">
+        <h3>Pourquoi on est sûrs d'y arriver</h3>
+        <ul>
+          <li>Le plus dur est déjà fait : 4,8 sur 161 avis, 2e sur 20 sans jamais avoir travaillé le site. Il manque la matière, pas la réputation.</li>
+          <li>Votre site fait 193 mots, le mot implant y apparaît une fois. Le vôtre, vu lundi, en fait 2 225 sur l'accueil, avec une page par soin. Google et les IA classent ce qu'ils peuvent lire.</li>
+          <li>Les 6 corrections de votre test de référencement sont exactement notre programme, action par action.</li>
+          <li>On mesure tout, avant et chaque mois : position sur la carte depuis 49 points, présence dans les IA, appels depuis la fiche.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bas-carte">
+      <div class="garantie-carte">
+        <p class="etiquette">Notre garantie, écrite dans le contrat</p>
+        <p>Dans six mois, vous êtes <strong>premier sur Google Maps sur « dentiste Champs-sur-Marne »</strong> depuis votre cabinet, et vous êtes satisfait. Sinon, vous me l'écrivez : <strong>je vous rembourse intégralement, ou je continue six mois sans rien facturer</strong>, vous choisissez. Vous gardez le site, la fiche, le domaine et tout ce qu'on a écrit.</p>
+      </div>
+      <div class="prix-carte">
+        <p class="etiquette">Le prix, tout compris</p>
+        <p class="montant">1 900 €<small>TTC, pour six mois</small></p>
+        <p class="apres">Puis 100 € par an : hébergement, domaine, site maintenu.</p>
+        <ul class="puces"><li>950 € à la signature</li><li>950 € à la mise en ligne</li><li>Rien à ajouter</li></ul>
+      </div>
+    </div>
+
+    <div class="cta">
+      <span class="bouton">Répondez « OK » à ce message WhatsApp</span>
+      <span>Je vous envoie le contrat pré-rempli et le lien de règlement dans la foulée. Lancement avec Léo cette semaine.</span>
+    </div>
+  </div>
+
+  <section class="bloc">
+    <p class="etiquette">Ce que vous nous avez dit</p>
+    <h2>Vos mots, aux deux rendez-vous</h2>
+    <div class="contenu">
+      <p class="citation">« Repartir d'une feuille blanche. Le site ne montre ni la modernité ni la qualité du cabinet. Je veux être trouvé sur l'implant dentaire, l'orthodontie esthétique adulte, et dans les IA. »<small>Premier rendez-vous, 7 septembre</small></p>
+      <ul class="liste">
+        <li><strong>Le cabinet</strong> : tout neuf, cinq chirurgiens-dentistes (un ou deux recrutements en cours), une coordinatrice, cinq assistantes, radio 2D et 3D, imprimante 3D, radiologue et médecins sur place dans la maison de santé. Urgences vues sous 24 h, patients anxieux accompagnés. De la place sous une à deux semaines : vous voulez plus de patients qu'il n'en arrive.</li>
+        <li><strong>Le site actuel</strong> : fait en 15 minutes chez Dentisite, 50 € par mois depuis trois ans, « service pas bon ». Prise de rendez-vous par Doctolib.</li>
+        <li><strong>Ce que vous voulez y voir</strong> : vos onglets Mon sourire, Tous les soins, Mon enfant ; un parcours premier rendez-vous puis bilan ; deux boutons en haut, Urgence et Prendre rendez-vous.</li>
+        <li><strong>En plus</strong> : les avis Google (vous auriez aimé une session dessus) et, plus tard, les réseaux sociaux.</li>
+        <li><strong>Lundi soir</strong> : vous vouliez voir des sites qu'on a faits, un retour sur investissement chiffré, et être sûr que le passage de l'ancien site au nouveau ne casse rien. Les trois sont plus bas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Ce qu'on a vu, mesuré le 14 septembre</p>
+    <h2>Un cabinet excellent, un site qui ne le dit à personne</h2>
+    <div class="constats">
+      <div class="constat bon"><div class="chiffre">4,8<small>sur 161 avis</small></div><p>Meilleure note que le Centre Dentaire qui vous précède (4,6). Il gagne au volume : 501 avis contre 161. Vous êtes 2e sur 20 sur « dentiste Champs-sur-Marne ».</p></div>
+      <div class="constat"><div class="chiffre">193<small>mots sur le site</small></div><p>Une seule page, aucun titre principal. « Implant » une fois, « orthodontie » deux fois. Facettes, aligneurs, blanchiment, urgence, 3D : zéro fois. Google n'a rien à classer.</p></div>
+      <div class="constat"><div class="chiffre">0<small>honoraire affiché</small></div><p>Depuis le décret de décembre 2020, un site de chirurgien-dentiste doit afficher ses honoraires (l'Ordre parle de 5 à 10 actes). Le vôtre n'en a aucun.</p></div>
+      <div class="constat"><div class="chiffre">56<small>sur 100 au test</small></div><p>73 sur la partie Google, 38 sur la partie IA. Cité par aucune IA sur « dentiste à Champs-sur-Marne pour un implant ». Les six corrections : honoraires introuvables, trop peu de texte, photos sans description, aperçu de partage manquant, langage des IA absent, pas de présentation sur la fiche.</p></div>
+    </div>
+    <p class="note" style="margin-top:14px">Test de référencement DeveloppIA du 14/09/2026, fiche Google, site actuel et recherches Google en navigation privée depuis Champs-sur-Marne.</p>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Comment on y répond</p>
+    <h2>Besoin par besoin, ce qu'on met en place</h2>
+    <div class="defile"><table>
+      <thead><tr><th>Vous voulez</th><th>Ce qu'on fait</th></tr></thead>
+      <tbody>
+        <tr><td>Une feuille blanche, la modernité et la qualité du cabinet</td><td>Un site neuf à votre nom : cabinet neuf, cinq praticiens, plateau 2D/3D et imprimante 3D dès le haut de page, 13 vraies photos du cabinet décrites une à une, vos onglets et vos deux boutons.</td></tr>
+        <tr><td>Être trouvé sur implant et orthodontie adulte</td><td>Une page complète par soin (implantologie, orthodontie adulte, urgences, soins courants, prothèses, parodontologie, enfant), écrite en questions, étapes et honoraires. Ce sont ces pages que Google classe, pas l'accueil.</td></tr>
+        <tr><td>Être cité par les IA</td><td>Données structurées reliées à votre fiche Google et à Doctolib, questions-réponses balisées (prix d'un implant, durée des aligneurs adulte, urgence, premier rendez-vous, peur du dentiste), textes pensés pour la façon dont une IA lit une page. Remesure chaque mois sur ChatGPT, Gemini et Perplexity.</td></tr>
+        <tr><td>Une fiche Google vivante</td><td>Présentation, prestations acte par acte, photos du cabinet neuf, réponses aux avis rédigées par nous et validées par vous, une actualité par mois. Session avis de 20 minutes avec Léo au lancement.</td></tr>
+        <tr><td>Un nom de domaine à vous, sans casse</td><td>Domaine à votre nom, ancienne adresse redirigée vers la nouvelle page par page, Doctolib rebranché, aucun lien mort. Vous arrêtez Dentisite une fois le nouveau site en ligne, pas avant.</td></tr>
+        <tr><td>Rester premier dans la durée</td><td>Un à deux articles par semaine sur les questions que vos patients tapent vraiment (on propose les sujets, on rédige, vous vérifiez en quelques minutes et vous envoyez une photo). Puis 5 à 10 articles par an la deuxième année.</td></tr>
+        <tr><td>Instagram</td><td>Pas dans ce programme : on en reparle une fois le site en ligne, si vous le souhaitez.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Le programme en dates</p>
+    <h2>Six mois, semaine par semaine</h2>
+    <div class="programme">
+      <div class="etape"><div class="quand">Semaine 1<br><span style="font-weight:400;color:var(--sourd);font-size:13px">dès vos accès</span></div><div class="quoi"><b>Votre fiche Google, remise d'aplomb</b>Présentation, prestations, photos du cabinet neuf, réponses aux avis, texte écrit pour la lecture des IA. Capture avant, capture après. Mesure de départ : votre position depuis 49 points autour du cabinet, et ce que répondent les IA.<div class="vous">Vous : l'appel de lancement de 40 minutes avec Léo, l'accès gestionnaire à la fiche, la grille d'honoraires en photo.</div></div></div>
+      <div class="etape"><div class="quand">Semaine 2</div><div class="quoi"><b>Votre site validé</b>La version vue lundi, complétée avec vos honoraires, vos praticiens et vos textes validés.<div class="vous">Vous : 30 minutes de relecture, à l'écran avec nous.</div></div></div>
+      <div class="etape"><div class="quand">Semaine 3</div><div class="quoi"><b>Site en ligne, domaine à votre nom</b>Hébergement inclus, Doctolib branché, ancienne adresse redirigée. Les pages implantologie, orthodontie adulte, urgences et « dentiste Noisiel » sont en ligne le même jour. Vous arrêtez Dentisite.<div class="vous">Vous : rien. Le second règlement de 950 € part ce jour-là.</div></div></div>
+      <div class="etape"><div class="quand">Semaines 3 à 26</div><div class="quoi"><b>Les articles et les IA</b>Un à deux articles par semaine, reliés aux pages de soin. Correction à la source de chaque erreur des IA sur le cabinet. Bing et Apple Plans remplis à l'identique.<div class="vous">Vous : quelques minutes par semaine, une photo et un « validé ».</div></div></div>
+      <div class="etape"><div class="quand">Chaque mois</div><div class="quoi"><b>La preuve</b>Position sur la carte, présence dans les IA, appels et demandes de rendez-vous depuis la fiche, avis reçus et réponses validées. Un tableau de bord, un point de 20 minutes. Exclusivité : aucun autre cabinet de Champs-sur-Marne chez nous.</div></div>
+      <div class="etape"><div class="quand">Fin du 6e mois</div><div class="quoi"><b>Le point de garantie</b>Recherche « dentiste Champs-sur-Marne » depuis le cabinet, en navigation privée, datée, à l'écran avec vous. Premier, ou remboursé, ou six mois offerts.</div></div>
+      <div class="etape"><div class="quand">Année 2</div><div class="quoi"><b>100 € par an</b>Hébergement, domaine, site maintenu et mis à jour, 5 à 10 articles par an. Même engagement : vous restez premier, ou remboursé.</div></div>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Le retour sur investissement</p>
+    <h2>Ce que ça coûte, ce que ça rapporte</h2>
+    <p class="chapeau">Une estimation, pas une promesse, à partir de chiffres publics : un patient dépense en moyenne 360 € par an chez son dentiste (Assurance maladie, 2024), un plan d'implantologie accepté vaut en moyenne 2 269 € (baromètre Masterdoc 2025), et il reste 35 à 38 % au praticien une fois tout payé (UNASA, Fiducial). Vous corrigerez avec vos propres chiffres.</p>
+    <div class="roi">
+      <div class="tuile"><div class="val">317 €<small>par mois</small></div><div class="lib">Le programme, ramené au mois sur six mois. La deuxième année, 8 € par mois.</div></div>
+      <div class="tuile"><div class="val">1<small>implant</small></div><div class="lib">En chiffre d'affaires, un seul plan d'implant rembourse les 1 900 €. En net, deux à trois implants sur six mois.</div></div>
+      <div class="tuile forte"><div class="val">18 à 24 %</div><div class="lib">La part des clics que prend le premier résultat de Google Maps. Aujourd'hui, elle va au Centre Dentaire.</div></div>
+    </div>
+    <div class="defile"><table>
+      <thead><tr><th>Scénario sur un an</th><th>Nouveaux patients</th><th>Chiffre d'affaires</th><th>Net, tout payé</th><th>Pour 1 900 €</th></tr></thead>
+      <tbody>
+        <tr><td>Prudent : 3 patients de plus par mois, 1 implant tous les deux mois</td><td>36</td><td>26 600 €</td><td>≈ 9 300 €</td><td>× 5</td></tr>
+        <tr><td>Réaliste : 5 patients de plus par mois, 1 implant par mois</td><td>60</td><td>48 800 €</td><td>≈ 17 000 €</td><td>× 9</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note" style="margin-top:12px">Cinq fauteuils et de la place sous une à deux semaines : ces volumes sont bien en dessous de ce que le cabinet peut absorber. Le calcul complet, mois par mois et avec ses sources, est sur <a href="https://developpia.fr/simulateur-de-rentabilite/">developpia.fr/simulateur-de-rentabilite</a>.</p>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Des sites que nous avons conçus</p>
+    <h2>Deux styles, et le vôtre</h2>
+    <p class="chapeau">Ces cabinets de démonstration montrent ce qu'on sait faire, du plus classique au plus sombre. Chacun a une page par soin, ses honoraires, ses données structurées et sa prise de rendez-vous.</p>
+    <div class="sites">
+      <a class="site" href="https://demo-cabinet-croix-rousse.vercel.app" target="_blank" rel="noopener"><img src="../img/croix-rousse.jpg" alt="Site de démonstration Cabinet Croix-Rousse, Lyon"><div class="lg"><b>Cabinet Croix-Rousse, Lyon</b>Classique et complet. La base de votre site.</div></a>
+      <a class="site" href="https://demo-clinique-aster.vercel.app" target="_blank" rel="noopener"><img src="../img/aster.jpg" alt="Site de démonstration Clinique Aster, Luxembourg"><div class="lg"><b>Clinique Aster, Luxembourg</b>Sombre, quatre langues, esthétique et implantologie.</div></a>
+      <a class="site" href="https://demo-cabinet-monceau-tau.vercel.app" target="_blank" rel="noopener"><img src="../img/monceau.jpg" alt="Site de démonstration Cabinet Monceau, Paris 8e"><div class="lg"><b>Cabinet Monceau, Paris 8e</b>Clair, hôtel particulier, ton sobre.</div></a>
+      <a class="site" href="https://demo-cabinet-grande-cote.vercel.app" target="_blank" rel="noopener"><img src="../img/grande-cote.jpg" alt="Site de démonstration Cabinet Grande-Côte, Lyon 1er"><div class="lg"><b>Cabinet Grande-Côte, Lyon 1er</b>Éditorial, raconté comme une journée au cabinet.</div></a>
+    </div>
+    <div class="avant-apres">
+      <div class="site"><img src="../img/fellous-actuel.jpg" alt="Votre site actuel"><div class="lg"><b>Votre site aujourd'hui</b>Une page, 193 mots, aucun honoraire, aucune page de soin.</div></div>
+      <div class="site"><img src="../img/maquette-fellous.jpg" alt="Votre nouveau site, version vue le 14 septembre"><div class="lg"><b>Votre site, vu ensemble lundi</b>2 225 mots sur l'accueil, vos onglets, vos deux boutons, une page par soin, honoraires, 13 photos du cabinet. Mis en ligne en semaine 3.</div></div>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Ce que ça vous demande</p>
+    <h2>Une heure au lancement, puis quelques minutes par semaine</h2>
+    <div class="contenu">
+      <ul class="liste coches">
+        <li>L'appel de lancement de 40 minutes avec Léo, cette semaine.</li>
+        <li>L'accès gestionnaire à votre fiche Google et au nom de domaine que vous choisirez (on vous guide pendant l'appel).</li>
+        <li>Votre grille d'honoraires en photo, par votre assistante.</li>
+        <li>Une relecture de 30 minutes du site en semaine 2, puis un « validé » sur chaque texte avant publication. Rien ne sort sans votre accord : c'est vous qui répondez de votre communication devant l'Ordre.</li>
+        <li>Une photo et quelques minutes par semaine pour les articles.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">La garantie, en détail</p>
+    <h2>Ce que vous risquez, c'est zéro</h2>
+    <div class="encadre">
+      <h3>Premier et satisfait à six mois, sinon remboursé ou six mois offerts</h3>
+      <p>À la fin du sixième mois, on refait la mesure de départ, à l'écran avec vous : une recherche « dentiste Champs-sur-Marne » sur Google Maps depuis votre cabinet, en navigation privée, datée. Si votre cabinet n'est pas premier, ou si vous n'êtes pas satisfait, vous me l'écrivez et vous choisissez : le remboursement intégral des 1 900 € sous trente jours, ou six mois de plus sans rien facturer, jusqu'à l'objectif.</p>
+      <p>Vous gardez le site, le nom de domaine, la fiche Google et tous les textes. Une seule condition de notre côté : les accès et les validations demandés dans le calendrier sont donnés dans les délais. C'est écrit à l'article 11 du contrat joint.</p>
+    </div>
+    <p class="note" style="margin-top:14px">Ce que vous risquez en ne faisant rien : six mois de plus où c'est le Centre Dentaire qu'on trouve en premier.</p>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Le prix, en détail</p>
+    <h2>1 900 € TTC pour six mois, puis 100 € par an</h2>
+    <div class="prix-detail">
+      <div class="ligne"><div><b>Le site complet</b><span>Conception à l'image du cabinet, une page par soin, honoraires, équipe, accès, 13 photos décrites, nom de domaine à votre nom, hébergement, maintenance, Doctolib branché, ancienne adresse redirigée.</span></div><div class="m">inclus</div></div>
+      <div class="ligne"><div><b>La fiche Google</b><span>Présentation, prestations, photos, réponses aux avis, une actualité par mois, session avis avec Léo.</span></div><div class="m">inclus</div></div>
+      <div class="ligne"><div><b>La place sur Google et dans les IA</b><span>Mesure de départ, pages par soin et par ville, données structurées, questions-réponses, un à deux articles par semaine, Bing et Apple, remesure mensuelle.</span></div><div class="m">inclus</div></div>
+      <div class="ligne"><div><b>Le suivi</b><span>Tableau de bord mensuel, point de 20 minutes, un interlocuteur qui répond sous un jour ouvré, exclusivité Champs-sur-Marne.</span></div><div class="m">inclus</div></div>
+      <div class="ligne total"><div><b>Six mois, tout compris</b><span>950 € à la signature, 950 € le jour de la mise en ligne. TTC, rien à ajouter.</span></div><div class="m">1 900 €</div></div>
+      <div class="ligne"><div><b>À partir de la deuxième année</b><span>Hébergement, domaine, site maintenu, 5 à 10 articles par an.</span></div><div class="m">100 € / an</div></div>
+    </div>
+    <p class="note" style="margin-top:14px">Pour situer : la prise de rendez-vous en ligne coûte environ 140 € par mois et prend le rendez-vous d'un patient qui vous a déjà trouvé. Une agence dentaire facture 2 800 à 8 000 € de mise en place puis 800 à 1 500 € par mois. Vous payez aujourd'hui 600 € par an pour 193 mots.</p>
+  </section>
+
+  <section class="bloc">
+    <p class="etiquette">Le cadre</p>
+    <h2>Ce qu'on ne fera jamais</h2>
+    <p class="chapeau">Tout est fait dans le cadre du code de déontologie des chirurgiens-dentistes. Ça protège votre fiche, votre titre et votre inscription à l'Ordre.</p>
+    <ul class="jamais">
+      <li>Écrire « orthodontiste » ou « spécialiste » : l'orthodontie est « pratiquée au cabinet »</li>
+      <li>Un témoignage de patient, un avis recopié sur le site</li>
+      <li>Une photo avant/après sans l'accord écrit du patient</li>
+      <li>Une place payée, un lien acheté, une comparaison avec un confrère</li>
+      <li>Un faux avis, un avis contre contrepartie</li>
+      <li>Publier un texte que vous n'avez pas validé</li>
+      <li>Le nom de votre cabinet comme référence chez nous</li>
+      <li>Modifier nom, adresse et catégorie de la fiche le même jour</li>
+    </ul>
+  </section>
+
+  <div class="fin">
+    <p class="etiquette">Pour démarrer</p>
+    <h2>Trois gestes, et on lance cette semaine</h2>
+    <ol>
+      <li>Vous répondez « OK » à ce message WhatsApp.</li>
+      <li>Vous recevez le contrat pré-rempli et le lien de règlement des 950 €.</li>
+      <li>On date l'appel de lancement avec Léo, et sept jours après vos accès votre fiche est à jour, capture avant et après à l'appui.</li>
+    </ol>
+    <p style="margin-top:16px;font-size:15px">Une question avant ? Écrivez-la au même endroit, je réponds dans la journée.</p>
+  </div>
+
+  <div class="signature"><b>Alexandre Majorel</b>DeveloppIA, référencement de cabinets dentaires<br>developpia.fr · contact@developpia.fr</div>
+</div>
+</body>
+</html>
